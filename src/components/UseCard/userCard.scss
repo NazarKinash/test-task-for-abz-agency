@@ -1,0 +1,45 @@
+.user-card {
+  padding-top: 62px;
+  width: 216px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.user-card--image {
+  border-radius: 50%;
+}
+
+.user-card--title {
+  margin-top: 17px;
+  width: inherit;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 28px;
+}
+
+.user-card--position {
+  margin-top: 8px;
+  width: inherit;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-card--email {
+  width: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-card--phone {
+  overflow: hidden;
+  width: inherit;
+
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .user-card {
+    padding-top: 36px;
+  }
+}

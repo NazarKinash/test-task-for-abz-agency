@@ -1,10 +1,53 @@
 .header {
+  width: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $mainBGC;
+}
+.header--wrapper {
+  position: relative;
+  padding-top: 18px;
+  padding-bottom: 18px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.header--logo {
-  width: 136px;
-  height: 10px;
-  background-color: rgb(204, 154, 154);
+.header--navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header--navigation-link {
+  margin-right: 30px;
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  line-height: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    color: $primaryColor;
+  }
+  &:active {
+    color: $seconduryolor;
+  }
+}
+
+@media (max-width: 767px) {
+  .header--wrapper {
+    padding-top: 5px;
+    padding-bottom: 0;
+  }
+
+  .header--navigation {
+    display: none;
+  }
+
+  .cls-1 {
+    fill: $logoColor;
+    fill-rule: evenodd;
+  }
 }

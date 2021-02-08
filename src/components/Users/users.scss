@@ -1,0 +1,48 @@
+.users {
+  background-color: $BGC_2;
+  text-align: center;
+}
+
+.users--wrapper {
+  padding-top: 146px;
+  padding-bottom: 160px;
+}
+
+.users--list {
+  display: grid;
+  padding: 0 44px;
+  box-sizing: border-box;
+  grid-template-columns: 216px 216px 216px;
+  column-gap: 115px;
+}
+@media (max-width: 1023px) {
+  .users--wrapper {
+    padding-top: 112px;
+    padding-bottom: 120px;
+  }
+  .users--list {
+    padding: 0 2px;
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .users--wrapper {
+    padding-top: 76px;
+    padding-bottom: 84px;
+  }
+  .users--list {
+    padding: 0 2px;
+    column-gap: 30px;
+  }
+  .users--list {
+    padding: 0 57px;
+    grid-template-columns: 216px;
+  }
+  .users--show-more {
+    margin-top: 36px;
+  }
+  .component-users-subtitle {
+    padding-top: 10px;
+  }
+}

@@ -1,7 +1,76 @@
 .baner-wrapper {
+  margin-top: 60px;
   width: 100%;
   height: 600px;
-  background-image: url("../public/images/banerimg.svg");
+  background-image: url(../public/images/baner.png);
   background-size: cover;
-  background-position: left;
+  background-position: top;
+}
+
+.baner--title {
+  padding-top: 108px;
+  width: 520px;
+
+  color: $lightTextColor;
+  text-transform: uppercase;
+}
+
+.baner--text {
+  padding-top: 26px;
+  color: $lightTextColor;
+  width: 530px;
+}
+
+.baner--btn {
+  display: block;
+  text-align: center;
+}
+
+//
+// ---=== For retina ===---
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .baner-wrapper {
+    background-image: url(../public/images/baner_2x.png);
+    background-size: cover;
+  }
+}
+
+//
+// ---=== Fot tablet ===---
+
+@media (max-width: 1023px) {
+  .baner-wrapper {
+    height: 500px;
+  }
+  .baner--title {
+    padding-top: 60px;
+    width: 420px;
+  }
+  .baner--text {
+    width: 450px;
+  }
+}
+
+//
+// ---=== For mobile ===---
+@media (max-width: 767px) {
+  .baner-wrapper {
+    margin-top: 36px;
+    text-align: center;
+    height: 400px;
+  }
+  .baner--title {
+    padding-top: 72px;
+    letter-spacing: 0.2px;
+    width: 100%;
+  }
+  .baner--text {
+    padding-top: 18px;
+    width: 100%;
+  }
+  .baner--btn {
+    display: inline-block;
+    text-align: center;
+  }
 }

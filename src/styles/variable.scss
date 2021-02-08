@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 $fontFamily: "Open Sans", sans-serif;
+$fontWeight: 400;
 
-$fontStyle: 400;
+$lightTextColor: rgb(255, 255, 255);
+$darkTextColor: rgb(33, 37, 41);
+$darkTextColor_2: rgb(108, 117, 125);
+
+$primaryColor: rgb(239, 91, 76);
+$primaryColorActive: rgb(210, 67, 53);
+$seconduryolor: rgb(0, 123, 255);
+
+$logoColor: rgb(27, 74, 138);
+//
+//---=== validate form colors ===---
+$mainBGC: rgb(255, 255, 255);
+$BGC_2: rgb(249, 249, 243);
+$backgroundBtnBrowsecolor: rgb(248, 247, 245);
+$modalOwerlayBackgroundColo: rgba(22, 33, 37, 0.8);
+
+//---=== validate form colors ===---
+$mainBorderColor: rgb(206, 212, 218);
+$validFildActiveColor: rgb(128, 189, 255);
+$validFildActiveBoxSadowColor: rgb(229, 242, 255);
+$invalidFildActiveColor: rgb(219, 52, 69);
+$invalidFildActiveBoxSadowColor: rgb(248, 214, 218);

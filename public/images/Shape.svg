@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="14" height="14">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #7b7b7b } 
+	</style>
+	<path id="Shape 2" class="shp0" d="M13 10.9L10.9 13L7 9.1L3.1 13L1 10.9L4.9 7L1 3.1L3.1 1L7 4.9L10.9 1L13 3.1L9.1 7L13 10.9Z" />
+</svg>

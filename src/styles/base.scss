@@ -9,8 +9,10 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: $fontFamily;
-  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  color: $darkTextColor;
 }
 
 img {
@@ -34,4 +36,73 @@ a {
   width: 100%;
   max-width: 964px;
   margin: 0 auto;
+}
+
+//  TEXT STYLES
+
+.Heaging1 {
+  display: inline-block;
+  margin: 0;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: -0.6px;
+}
+
+.heading2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.paragraph {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.Btn {
+  margin-top: 32px;
+  padding: 9px;
+  width: 210px;
+  font-size: 16px;
+  background-color: $primaryColor;
+  color: $lightTextColor;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:active {
+    background-color: $primaryColorActive;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 708px;
+  }
+  .Heaging1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 330px;
+  }
+  .Heaging1 {
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: -0.2px;
+  }
+
+  .heading2 {
+    letter-spacing: 0;
+  }
+
+  .Btn {
+    margin-top: 24px;
+  }
 }
