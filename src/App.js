@@ -1,10 +1,10 @@
 import React from "react";
-import About from "./components/About/About.jsx";
-import Baner from "./components/Baner/Baner.jsx";
-import Footer from "./components/Footer/Footer.jsx";
-import Header from "./components/Header/Header.jsx";
-import Register from "./components/Register/register.jsx";
-import Users from "./components/Users/Users.jsx";
+const About = React.lazy(() => import("./components/About/About.jsx"));
+const Baner = React.lazy(() => import("./components/Baner/Baner.jsx"));
+const Footer = React.lazy(() => import("./components/Footer/Footer.jsx"));
+const Header = React.lazy(() => import("./components/Header/Header.jsx"));
+const Register = React.lazy(() => import("./components/Register/register.jsx"));
+const Users = React.lazy(() => import("./components/Users/Users.jsx"));
 
 const App = () => {
   return (

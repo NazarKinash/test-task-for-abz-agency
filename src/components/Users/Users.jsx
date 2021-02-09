@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncGetUsers } from "../../redux/api";
 import { usersList } from "../../redux/slices/usersSlice";
 import { totalPagesSelector } from "../../redux/slices/responseDataSlice";
-import UserCard from "../UseCard/UserCard";
+const UserCard = React.lazy(() => import("../UseCard/UserCard"));
 
 const Users = () => {
   const [page, setPage] = useState(1);

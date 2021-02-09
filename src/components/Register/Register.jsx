@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncGetUsers, asyncRegister, getPositions } from "../../redux/api";
 import { registerSuccessSelector } from "../../redux/slices/registerInfoSlice";
-import Modal from "../Modal/Modal";
+const Modal = React.lazy(() => import("../Modal/Modal"));
 import { validateSchema } from "./validate";
 
 //
