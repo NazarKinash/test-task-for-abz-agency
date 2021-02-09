@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  position: relative;
 }
 
 .user-card--image {
@@ -14,28 +15,57 @@
 .user-card--title {
   margin-top: 17px;
   width: inherit;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  overflow-wrap: break-word;
   line-height: 28px;
 }
 
 .user-card--position {
   margin-top: 8px;
-  width: inherit;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
+.user-card--position,
+.user-card--phone,
 .user-card--email {
   width: inherit;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.user-card--phone {
+
+.tooltip {
+  position: relative;
+  width: inherit;
+  cursor: pointer;
+}
+
+.tooltip p {
+  text-overflow: ellipsis;
   overflow: hidden;
   width: inherit;
+}
 
-  text-overflow: ellipsis;
+.tooltip span {
+  display: none;
+
+  width: max-content;
+  max-width: calc(100vw - 30px);
+  text-align: center;
+  padding: 5px;
+
+  overflow-wrap: break-word;
+
+  position: absolute;
+  z-index: 5;
+  bottom: -40;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 1px solid $mainBorderColor;
+  border-radius: 6px;
+
+  background-color: $modalOwerlayBackgroundColo;
+  color: $lightTextColor;
+}
+.tooltip:hover span {
+  display: block;
 }
 
 @media (max-width: 767px) {

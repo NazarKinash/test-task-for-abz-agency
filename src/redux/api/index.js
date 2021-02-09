@@ -25,7 +25,7 @@ export const getPositions = async () => {
 
 export const asyncGetUsers = (page) => async (dispatch) => {
   try {
-    await axios.get(`/users?page=${page ? page : 1}&count=5`).then((response) => {
+    await axios.get(`/users?page=${page ? page : 1}&count=6`).then((response) => {
       if (page) {
         dispatch(showMoreUsers(response.data.users));
       } else {
