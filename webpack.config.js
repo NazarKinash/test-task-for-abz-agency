@@ -4,6 +4,28 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
+const isDev = process.env.NODE_ENV === "development";
+const isProd = !isDev;
+
+//
+//
+//
+
+const optimization = () => {
+  const options = {
+    splitChunks: {
+      chunks: "all",
+    },
+  };
+  if (isProd) {
+    options.minimizer = [new OptimizeCssAssetsPlugin(), new TerserPlugin()];
+  }
+  return options;
+};
 
 module.exports = {
   mode: "development",
@@ -15,6 +37,15 @@ module.exports = {
   resolve: {
     extensions: [".jsx", ".js"],
   },
+
+  devServer: {
+    contentBase: path.join(__dirname, "build"),
+    compress: true,
+    port: 9000,
+    hot: isDev,
+  },
+  optimization: optimization(),
+
   module: {
     rules: [
       {
@@ -34,6 +65,8 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
+              // hmr: isDev,
+              // reloadAll: true,
               esModule: false,
               publicPath: "",
             },
@@ -75,7 +108,12 @@ module.exports = {
       ],
     }),
 
-    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].[hash].css",
