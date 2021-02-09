@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncGetUsers } from "../../redux/api";
 import { usersList } from "../../redux/slices/usersSlice";
@@ -28,7 +28,11 @@ const Users = () => {
           <div className="users--list">
             {usersCardList &&
               !!usersCardList.length &&
-              usersCardList.map((el) => <UserCard key={el.id} userInfo={el} />)}
+              usersCardList.map((el) => (
+                <Suspense key={el.id} fallback={<div>Loading...</div>}>
+                  <UserCard userInfo={el} />
+                </Suspense>
+              ))}
           </div>
           {page < totalPages && (
             <button className="Btn users--show-more" onClick={showMore}>

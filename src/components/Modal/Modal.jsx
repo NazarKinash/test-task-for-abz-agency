@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { registerInfo } from "../../redux/slices/registerInfoSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { registerInfo, setRegisterInfo } from "../../redux/slices/registerInfoSlice";
 
-const Modal = ({ setIsModal }) => {
+const Modal = () => {
   const modalContent = useSelector(registerInfo);
+  const dispatch = useDispatch();
 
   //
 
@@ -17,7 +18,7 @@ const Modal = ({ setIsModal }) => {
   //
   // ---=== close handler ===---
   const closeModal = (e) => {
-    (e.key === "Escape" || e.target.id === "close") && setIsModal(false);
+    (e.key === "Escape" || e.target.id === "close") && dispatch(setRegisterInfo());
   };
 
   return (

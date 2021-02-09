@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncGetUsers, asyncRegister, getPositions } from "../../redux/api";
-import { registerSuccessSelector } from "../../redux/slices/registerInfoSlice";
+import { registerSuccessSelector, messageSelector } from "../../redux/slices/registerInfoSlice";
 const Modal = React.lazy(() => import("../Modal/Modal"));
 import { validateSchema } from "./validate";
 
@@ -10,8 +10,7 @@ import { validateSchema } from "./validate";
 
 function Register({}) {
   const [positions, setPositions] = useState();
-  const [isModal, setIsModal] = useState(false);
-
+  const isMessage = useSelector(messageSelector);
   const dispatch = useDispatch();
 
   const isRegister = useSelector(registerSuccessSelector);
@@ -28,7 +27,6 @@ function Register({}) {
     },
     onSubmit: (values) => {
       dispatch(asyncRegister({ ...values, position_id: Number(values.position_id) }));
-      setIsModal(true);
       modalContent.success && formik.resetForm();
     },
     validationSchema: validateSchema,
@@ -53,7 +51,11 @@ function Register({}) {
 
   return (
     <>
-      {isModal && <Modal setIsModal={setIsModal} />}
+      {isMessage && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Modal />
+        </Suspense>
+      )}
 
       <div className="register" id="register">
         <div className="container">
