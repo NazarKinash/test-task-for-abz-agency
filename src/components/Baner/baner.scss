@@ -2,7 +2,7 @@
   margin-top: 60px;
   width: 100%;
   height: 600px;
-  background-image: url(../public/images/baner.png);
+  background-image: url(../public/images/baner.webp);
   background-size: cover;
   background-position: top;
 }
@@ -31,7 +31,7 @@
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .baner-wrapper {
-    background-image: url(../public/images/baner_2x.png);
+    background-image: url(../public/images/baner_2x.webp);
     background-size: cover;
   }
 }
