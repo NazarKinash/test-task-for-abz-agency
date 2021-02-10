@@ -10,7 +10,7 @@ const About = () => {
           <div className="about--content-wrapper">
             <img className="about--component-img" src={aboutComponnentImage} alt="about-component-img" />
             <div className="about--content">
-              <h3 className="heading2">I am cool frontend developer</h3>
+              <h3 className="heading2 about--heading">I am cool frontend developer</h3>
               <p className="paragraph about--paragraph">
                 We will evaluate how clean your approach to writing CSS and Javascript code is. You can use any CSS and
                 Javascript 3rd party libraries without any restriction.

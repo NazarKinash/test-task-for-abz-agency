@@ -183,7 +183,9 @@ function Register({}) {
                   <div className="invalid-feedback">{formik.errors.photo}</div>
                 ) : null}
                 <div className="register--btn-container">
-                  <input className="Btn register--submit-btn" type="submit" value="Sing up now" />
+                  <button className="Btn" type="submit">
+                    Sing up now
+                  </button>
                 </div>
               </form>
             </div>
